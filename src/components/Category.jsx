@@ -1,6 +1,7 @@
+import {Link} from 'react-router-dom';
 function Category() {
     return ( 
-        <>
+        <div className="archive category">
             <section className="container">
             <div className="wrapper clear">
                 <div className="contentLeft">
@@ -8,47 +9,11 @@ function Category() {
                 <div className="archivePostWrap">
                     <div className="archivePostItem">
                     <div className="archivePostTime">15.05.2015</div>
-                    <h3 className="archivePostTitle"><a href="#">WHEN LIFE GIVES YOU LEMONS DRINK TEQUILA</a></h3>
-                    <a href="single.html" className="archivePostCategory">Lifestyle</a>
-                    <a href="single.html" className="archivePostImg">
-                        <img src="images/content/archivePostImg.jpg" alt="Francoise img" />
-                    </a>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
-                    <div className="archivePostItemMeta">
-                        <a href="#" className="archivePostItemComments">124 Comments</a>
-                        <div className="archivePostItemShareLinks">
-                        <a href="#"><i className="fa fa-facebook" /></a>
-                        <a href="#"><i className="fa fa-twitter" /></a>
-                        <a href="#"><i className="fa fa-pinterest" /></a>
-                        </div>
-                        <a href="single.html" className="archivePostReadMore">Read More</a>
-                    </div>
-                    </div>
-                    <div className="archivePostItem">
-                    <div className="archivePostTime">15.05.2015</div>
-                    <h3 className="archivePostTitle"><a href="#">Five Strange and Unusual Benefits of Solo Travel</a></h3>
-                    <a href="single.html" className="archivePostCategory">Lifestyle</a>
-                    <a href="single.html" className="archivePostImg">
-                        <img src="images/content/archivePostImg2.jpg" alt="Francoise img" />
-                    </a>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
-                    <div className="archivePostItemMeta">
-                        <a href="#" className="archivePostItemComments">124 Comments</a>
-                        <div className="archivePostItemShareLinks">
-                        <a href="#"><i className="fa fa-facebook" /></a>
-                        <a href="#"><i className="fa fa-twitter" /></a>
-                        <a href="#"><i className="fa fa-pinterest" /></a>
-                        </div>
-                        <a href="single.html" className="archivePostReadMore">Read More</a>
-                    </div>
-                    </div>
-                    <div className="archivePostItem">
-                    <div className="archivePostTime">15.05.2015</div>
-                    <h3 className="archivePostTitle"><a href="#">WHEN LIFE GIVES YOU LEMONS DRINK TEQUILA</a></h3>
-                    <a href="single.html" className="archivePostCategory">Lifestyle</a>
-                    <a href="single.html" className="archivePostImg">
+                    <h3 className="archivePostTitle"><Link to={'/single'}>WHEN LIFE GIVES YOU LEMONS DRINK TEQUILA</Link></h3>
+                    <Link to={'/category'} className="archivePostCategory">Lifestyle</Link>
+                    <Link to={'/single'} className="archivePostImg">
                         <img src="images/content/archivePostImg3.jpg" alt="Francoise img" />
-                    </a>
+                    </Link>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
                     <div className="archivePostItemMeta">
                         <a href="#" className="archivePostItemComments">124 Comments</a>
@@ -57,7 +22,7 @@ function Category() {
                         <a href="#"><i className="fa fa-twitter" /></a>
                         <a href="#"><i className="fa fa-pinterest" /></a>
                         </div>
-                        <a href="single.html" className="archivePostReadMore">Read More</a>
+                        <Link to={'/single'} className="archivePostReadMore">Read More</Link>
                     </div>
                     </div>
                 </div>
@@ -107,7 +72,7 @@ function Category() {
             <div className="clear" />
             </section>
 
-        </>
+        </div>
     );
 }
 

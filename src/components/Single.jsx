@@ -1,13 +1,14 @@
+import {Link} from 'react-router-dom';
 function Single() {
     return ( 
-        <>
+        <div className="single-post">
             <section className="container">
             <div className="wrapper clear">
                 <div className="contentLeft">
                 <div className="singlePostMeta">
                     <div className="singlePostTime">15.05.2015</div>
                     <h1>CHOCOLATE-COVERED ESPRESSO BEAN BROWNIES</h1>
-                    <a href="#" className="singlePostCategory">Lifestyle</a>
+                    <Link to={'/category'} className="singlePostCategory">Lifestyle</Link>
                 </div>
                 <div className="singlePostWrap">
                     <div className="singlePostImg">
@@ -38,7 +39,7 @@ function Single() {
             </div>
             <div className="clear" />
             </section>
-        </>
+        </div>
     );
 }
 

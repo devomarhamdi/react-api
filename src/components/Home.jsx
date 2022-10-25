@@ -1,88 +1,22 @@
+import {Link} from 'react-router-dom';
+import {useEffect , useState} from 'react';
 function Home() {
+
+
     return ( 
-        <>
+        <div className="archive category">
         <section className="container mt-5">
             <div className="wrapper clear">
                 <div className="clear" />
                 <div className="contentLeft">
                 <div className="blogPostListWrap">
                     <div className="blogPostListItem clear">
-                    <a href="single.html" className="blogPostListImg">
+                    <Link to={'/single'} className="blogPostListImg">
                         <img src="images/content/postList.jpg" alt="Francoise img" />
-                    </a>
+                    </Link>
                     <div className="blogPostListText">
                         <div className="blogPostListTime">15.05.2015</div>
-                        <h3><a href="single.html">CHOCOLATE-COVERED ESPRESSO BEAN <br /> BROWNIES</a></h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt consectetur adipisicing elit sed do eiusmod</p>
-                    </div>
-                    </div>
-                    <div className="blogPostListItem clear">
-                    <a href="single.html" className="blogPostListImg">
-                        <img src="images/content/postList2.jpg" alt="Francoise img" />
-                    </a>
-                    <div className="blogPostListText">
-                        <div className="blogPostListTime">15.05.2015</div>
-                        <h3><a href="single.html">ROUNDTABLE: THE CHANGING STATE OF THE SEA</a></h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt consectetur adipisicing elit sed do eiusmod</p>
-                    </div>
-                    </div>
-                    <div className="blogPostListItem clear">
-                    <a href="single.html" className="blogPostListImg">
-                        <img src="images/content/postList3.jpg" alt="Francoise img" />
-                    </a>
-                    <div className="blogPostListText">
-                        <div className="blogPostListTime">15.05.2015</div>
-                        <h3><a href="single.html">CHOCOLATE-COVERED ESPRESSO BEAN <br /> BROWNIES</a></h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt consectetur adipisicing elit sed do eiusmod</p>
-                    </div>
-                    </div>
-                    <div className="blogPostListItem clear">
-                    <a href="single.html" className="blogPostListImg">
-                        <img src="images/content/postList4.jpg" alt="Francoise img" />
-                    </a>
-                    <div className="blogPostListText">
-                        <div className="blogPostListTime">15.05.2015</div>
-                        <h3><a href="single.html">ROUNDTABLE: THE CHANGING STATE OF THE SEA</a></h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt consectetur adipisicing elit sed do eiusmod</p>
-                    </div>
-                    </div>
-                    <div className="blogPostListItem clear">
-                    <a href="single.html" className="blogPostListImg">
-                        <img src="images/content/postList5.jpg" alt="Francoise img" />
-                    </a>
-                    <div className="blogPostListText">
-                        <div className="blogPostListTime">15.05.2015</div>
-                        <h3><a href="single.html">CHOCOLATE-COVERED ESPRESSO BEAN <br /> BROWNIES</a></h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt consectetur adipisicing elit sed do eiusmod</p>
-                    </div>
-                    </div>
-                    <div className="blogPostListItem clear">
-                    <a href="single.html" className="blogPostListImg">
-                        <img src="images/content/postList6.jpg" alt="Francoise img" />
-                    </a>
-                    <div className="blogPostListText">
-                        <div className="blogPostListTime">15.05.2015</div>
-                        <h3><a href="single.html">ROUNDTABLE: THE CHANGING STATE OF THE SEA</a></h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt consectetur adipisicing elit sed do eiusmod</p>
-                    </div>
-                    </div>
-                    <div className="blogPostListItem clear">
-                    <a href="single.html" className="blogPostListImg">
-                        <img src="images/content/postList7.jpg" alt="Francoise img" />
-                    </a>
-                    <div className="blogPostListText">
-                        <div className="blogPostListTime">15.05.2015</div>
-                        <h3><a href="single.html">CHOCOLATE-COVERED ESPRESSO BEAN <br /> BROWNIES</a></h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt consectetur adipisicing elit sed do eiusmod</p>
-                    </div>
-                    </div>
-                    <div className="blogPostListItem clear">
-                    <a href="single.html" className="blogPostListImg">
-                        <img src="images/content/postList8.jpg" alt="Francoise img" />
-                    </a>
-                    <div className="blogPostListText">
-                        <div className="blogPostListTime">15.05.2015</div>
-                        <h3><a href="single.html">ROUNDTABLE: THE CHANGING STATE OF THE SEA</a></h3>
+                        <h3><Link to={'/single'}>CHOCOLATE-COVERED ESPRESSO BEAN <br /> BROWNIES</Link></h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt consectetur adipisicing elit sed do eiusmod</p>
                     </div>
                     </div>
@@ -133,7 +67,7 @@ function Home() {
             <div className="clear" />
         </section>
 
-        </>
+        </div>
     );
 }
 

@@ -1,11 +1,12 @@
+import {Link} from 'react-router-dom';
 function Notfound() {
     return ( 
-        <>
-            <section className="container">
+        <div className='error404'>
+        <section className="container">
             <div className="page404Wrap">
                 <img src="images/404.png" alt="Francoise img" />
                 <p>The requested page has <br /> not been found</p>
-                <a href="index.html" className="homePageLink">homepage</a>
+                <Link to={'/'} className="homePageLink">homepage</Link>
             </div>
             <div className="clear" />
             <div className="ourInstagram">
@@ -53,7 +54,7 @@ function Notfound() {
                 </div>
             </div>
             </section>
-        </>
+        </div>
     );
 }
 

@@ -1,21 +1,20 @@
+import {Link} from 'react-router-dom';
 function Navbar() {
     return ( 
         <>
-            <header id="header">
+        <header id="header">
             <div className="siteHeader">
                 <div className="wrapper clear">
                 <a href="index.html" className="mobile-logo">
                 </a>
                 <ul className="mainMenu clear">
                     <li>
-                    <a href="index.html">home</a>
+                    <Link to={'/'}>home</Link>
                     </li>
                     <li>
-                    <a href="#">Category</a>
+                    <Link>Category</Link>
                     <ul>
-                        <li><a href="category.html">Category one</a></li>
-                        <li><a href="category.html">Category two</a></li>
-                        <li><a href="category.html">Category three</a></li>
+                        <li><Link to={'/category'}>Category one</Link></li>
                     </ul>
                     </li>
                 </ul>
@@ -38,7 +37,7 @@ function Navbar() {
                 </span>
                 </div>	
             </div>
-            <a href="#" className="logo">IT SHARKS 25</a>
+            <a href="#" className="logo">Omar Hamdi</a>
         </header>
 
         </>
