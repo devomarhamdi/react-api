@@ -1,5 +1,22 @@
-import {Link} from 'react-router-dom';
+import {Link,useParams} from 'react-router-dom';
+import {useEffect , useState} from 'react';
+
+var myparameters = useParams;
+var id = myparameters.id;
+console.log(id);
+
 function Single() {
+
+    const[posts,setPosts] = useState([]);
+
+    useEffect(()=>{
+        fetch('https://webeetec.com/itsharks24/blog/api/singlepost.php?id=4')
+        .then(res => res.json())
+        .then(r => {
+            console.log(r);
+            // setPosts(r);
+        })
+    },[])
     return ( 
         <div className="single-post">
             <section className="container">

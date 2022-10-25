@@ -1,5 +1,17 @@
 import {Link} from 'react-router-dom';
+import {useEffect , useState} from 'react';
+
 function Category() {
+    const[postsByCategories, setPostsByCategories] = useState([]);
+
+    useEffect(()=>{
+        fetch('https://webeetec.com/itsharks24/blog/api/getpostsbycategory.php?category=')
+        .then(res => res.json())
+        .then(r => {
+            setPostsByCategories(r);
+        })
+    },[])
+
     return ( 
         <div className="archive category">
             <section className="container">

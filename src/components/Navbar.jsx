@@ -1,5 +1,15 @@
 import {Link} from 'react-router-dom';
+import {useEffect , useState} from 'react';
 function Navbar() {
+    const[Categories,setCategories] = useState([]);
+
+    useEffect(()=>{
+        fetch('https://webeetec.com/itsharks24/blog/api/getcategory.php')
+        .then(res => res.json())
+        .then(r => {
+            setCategories(r);
+        })
+    },[])
     return ( 
         <>
         <header id="header">
@@ -14,7 +24,13 @@ function Navbar() {
                     <li>
                     <Link>Category</Link>
                     <ul>
-                        <li><Link to={'/category'}>Category one</Link></li>
+                        {
+                            Categories.map((category)=>{
+                                return(
+                                    <li><Link to={'/'+category.name}>{category.name}</Link></li>
+                                );
+                            })
+                        }
                     </ul>
                     </li>
                 </ul>
@@ -37,7 +53,7 @@ function Navbar() {
                 </span>
                 </div>	
             </div>
-            <a href="#" className="logo">Omar Hamdi</a>
+            <a  className="logo">Final Project</a>
         </header>
 
         </>

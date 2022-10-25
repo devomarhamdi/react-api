@@ -14,7 +14,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home/>}/>
           <Route path='/category' element={<Category/>}/>
-          <Route path='/single' element={<Single/>}/>
+          <Route path='/single/:id' element={<Single/>}/>
           <Route path='*' element={<Notfound/>}/>
         </Routes>
       <Footer/>

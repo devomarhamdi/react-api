@@ -2,25 +2,40 @@ import {Link} from 'react-router-dom';
 import {useEffect , useState} from 'react';
 function Home() {
 
+    const[posts,setPosts] = useState([]);
 
+    useEffect(()=>{
+        fetch('https://webeetec.com/itsharks24/blog/api/getposts.php')
+        .then(res => res.json())
+        .then(r => {
+            setPosts(r);
+        })
+    },[])
     return ( 
         <div className="archive category">
         <section className="container mt-5">
             <div className="wrapper clear">
                 <div className="clear" />
                 <div className="contentLeft">
-                <div className="blogPostListWrap">
-                    <div className="blogPostListItem clear">
-                    <Link to={'/single'} className="blogPostListImg">
-                        <img src="images/content/postList.jpg" alt="Francoise img" />
-                    </Link>
-                    <div className="blogPostListText">
-                        <div className="blogPostListTime">15.05.2015</div>
-                        <h3><Link to={'/single'}>CHOCOLATE-COVERED ESPRESSO BEAN <br /> BROWNIES</Link></h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt consectetur adipisicing elit sed do eiusmod</p>
-                    </div>
-                    </div>
-                </div>
+                {
+                    posts.map((post)=>{
+                        return(
+                        <div className="blogPostListWrap">
+                            <div className="blogPostListItem clear">
+                            <Link to={'/single/'+post.id} className="blogPostListImg">
+                                <img src={`https://webeetec.com/itsharks24/blog/admin/`+post.image} alt="Francoise img" />
+                            </Link>
+                            <div className="blogPostListText">
+                                <div className="blogPostListTime">{post.date}</div>
+                                <h3><Link to={'/single/'+post.id}>{post.title}</Link></h3>
+                                <p>{post.description}</p>
+                            </div>
+                            </div>
+                        </div>
+                        );
+                    })
+                }
+                
                 <div className="postPagination">
                     <ul className="clear">
                     <li className="newPosts"><a href="#">New posts</a></li>
