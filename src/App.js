@@ -14,8 +14,8 @@ function App() {
         <Navbar/>
           <Routes>
             <Route path='/' element={<Home/>}/>
-            <Route path='/:id' element={<Category/>}/>
-            <Route path='/:id/:id' element={<Single/>}/>
+            <Route path='/:category' element={<Category/>}/>
+            <Route path='/:category/:id' element={<Single/>}/>
             <Route path='*' element={<Notfound/>}/>
           </Routes>
         <Footer/>

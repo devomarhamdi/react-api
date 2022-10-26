@@ -11,6 +11,16 @@ function Home() {
             setPosts(r);
         })
     },[])
+
+    const[recent,setRecent] = useState([]);
+
+    useEffect(()=>{
+        fetch('https://webeetec.com/itsharks24/blog/api/getrecentpost.php')
+        .then(res => res.json())
+        .then(r => {
+            setRecent(r);
+        })
+    },[])
     return ( 
         <div className="archive category">
         <section className="container mt-5">
@@ -67,16 +77,22 @@ function Home() {
                     <a href="#"><i className="fa fa-google-plus" /></a>
                     </div>
                 </div>
-                <div className="sidebar-widget">
-                    <h3>Recent post</h3>
-                    <div className="popularPostsWidget">
-                    <div className="popularPostsWidgetItem">
-                        <a href="#" className="popularPostsItemImg"><img src="images/content/popularPostImg.jpg" alt="Francoise img" /></a>
-                        <time dateTime="2015-05-15">15.05.2015</time>
-                        <h4><a href="#">MY BEDSIDE TABLE: THE CURATOR</a></h4>
-                    </div>
-                    </div>
-                </div>
+                {
+                    recent.map((r=>{
+                        return(
+                        <div className="sidebar-widget">
+                            <h3>Recent post</h3>
+                            <div className="popularPostsWidget">    
+                            <div className="popularPostsWidgetItem">
+                                <Link to={`/`+r.category+`/`+r.id} className="popularPostsItemImg"><img src={`https://webeetec.com/itsharks24/blog/admin/`+r.image} alt="Francoise img" /></Link>
+                                <time dateTime="2015-05-15">{r.date}</time>
+                                <h4><Link to={`/`+r.category+`/`+r.id}>{r.title}</Link></h4>
+                            </div>
+                            </div>
+                        </div>
+                        );
+                    }))
+                }
                 </div>
             </div>
             <div className="clear" />
