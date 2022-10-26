@@ -1,32 +1,38 @@
-import {Link} from 'react-router-dom';
+import {Link, useParams} from 'react-router-dom';
 import {useEffect , useState} from 'react';
 
 function Category() {
+    var myparameters = useParams();
+    var id = myparameters.id;
+
     const[postsByCategories, setPostsByCategories] = useState([]);
 
     useEffect(()=>{
-        fetch('https://webeetec.com/itsharks24/blog/api/getpostsbycategory.php?category=')
+        fetch('https://webeetec.com/itsharks24/blog/api/getpostsbycategory.php?category='+id)
         .then(res => res.json())
         .then(r => {
             setPostsByCategories(r);
         })
-    },[])
+    },[id])
 
     return ( 
         <div className="archive category">
             <section className="container">
             <div className="wrapper clear">
                 <div className="contentLeft">
-                <div className="archivePageTitle"><span>Lifestyle</span></div>
-                <div className="archivePostWrap">
+                {
+                    postsByCategories.map((p)=>{
+                        return(
+                            <div className="archivePostWrap">
+                                <div className="archivePageTitle"><span>{p.category}</span></div>
                     <div className="archivePostItem">
-                    <div className="archivePostTime">15.05.2015</div>
-                    <h3 className="archivePostTitle"><Link to={'/single'}>WHEN LIFE GIVES YOU LEMONS DRINK TEQUILA</Link></h3>
-                    <Link to={'/category'} className="archivePostCategory">Lifestyle</Link>
-                    <Link to={'/single'} className="archivePostImg">
-                        <img src="images/content/archivePostImg3.jpg" alt="Francoise img" />
+                    <div className="archivePostTime">{p.date}</div>
+                    <h3 className="archivePostTitle"><Link to={`/`+p.category+`/`+p.id}>{p.title}</Link></h3>
+                    <Link to={'/'+p.category} className="archivePostCategory">{p.category}</Link>
+                    <Link to={`/`+p.category+`/`+p.id} className="archivePostImg">
+                        <img src={`https://webeetec.com/itsharks24/blog/admin/`+p.image} alt="Francoise img" />
                     </Link>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+                    <p>{p.description}</p>
                     <div className="archivePostItemMeta">
                         <a href="#" className="archivePostItemComments">124 Comments</a>
                         <div className="archivePostItemShareLinks">
@@ -34,10 +40,13 @@ function Category() {
                         <a href="#"><i className="fa fa-twitter" /></a>
                         <a href="#"><i className="fa fa-pinterest" /></a>
                         </div>
-                        <Link to={'/single'} className="archivePostReadMore">Read More</Link>
+                        <Link to={`/`+p.category+`/`+p.id} className="archivePostReadMore">Read More</Link>
                     </div>
                     </div>
                 </div>
+                        );
+                    })
+                }
                 <div className="postPagination">
                     <ul className="clear">
                     <li className="newPosts"><a href="#">New posts</a></li>

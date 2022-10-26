@@ -8,17 +8,18 @@ import Notfound from './components/Notfound';
 import {BrowserRouter , Routes , Route} from 'react-router-dom'
 
 function App() {
+
   return (
-    <BrowserRouter>
-      <Navbar/>
-        <Routes>
-          <Route path='/' element={<Home/>}/>
-          <Route path='/category' element={<Category/>}/>
-          <Route path='/single/:id' element={<Single/>}/>
-          <Route path='*' element={<Notfound/>}/>
-        </Routes>
-      <Footer/>
-    </BrowserRouter>
+      <BrowserRouter>
+        <Navbar/>
+          <Routes>
+            <Route path='/' element={<Home/>}/>
+            <Route path='/:id' element={<Category/>}/>
+            <Route path='/:id/:id' element={<Single/>}/>
+            <Route path='*' element={<Notfound/>}/>
+          </Routes>
+        <Footer/>
+      </BrowserRouter>
   );
 }
 

@@ -22,12 +22,12 @@ function Home() {
                         return(
                         <div className="blogPostListWrap">
                             <div className="blogPostListItem clear">
-                            <Link to={'/single/'+post.id} className="blogPostListImg">
+                            <Link to={`/`+post.category+`/`+post.id} className="blogPostListImg">
                                 <img src={`https://webeetec.com/itsharks24/blog/admin/`+post.image} alt="Francoise img" />
                             </Link>
                             <div className="blogPostListText">
                                 <div className="blogPostListTime">{post.date}</div>
-                                <h3><Link to={'/single/'+post.id}>{post.title}</Link></h3>
+                                <h3><Link to={`/`+post.category+`/`+post.id}>{post.title}</Link></h3>
                                 <p>{post.description}</p>
                             </div>
                             </div>
