@@ -45,7 +45,7 @@ function Single() {
                                             <div className="singlePostMeta">
                                                 <div className="singlePostTime">{p.date}</div>
                                                     <h1>{p.title}</h1>
-                                                    <Link to={'/'+p.category} className="singlePostCategory">{p.category}</Link>
+                                                    <Link to={'/react-api/'+p.category} className="singlePostCategory">{p.category}</Link>
                                             </div>
                                             <div className="singlePostWrap">
                                                 <div className="singlePostImg">
@@ -91,9 +91,9 @@ function Single() {
                     recent.map((r=>{
                         return(
                             <div className="popularPostsWidgetItem">
-                                <Link to={`/`+r.category+`/`+r.id} className="popularPostsItemImg"><img src={`https://webeetec.com/itsharks24/blog/admin/`+r.image} alt="Francoise img" /></Link>
+                                <Link to={`/react-api/`+r.category+`/`+r.id} className="popularPostsItemImg"><img src={`https://webeetec.com/itsharks24/blog/admin/`+r.image} alt="Francoise img" /></Link>
                                 <time dateTime="2015-05-15">{r.date}</time>
-                                <h4><Link to={`/`+r.category+`/`+r.id}>{r.title}</Link></h4>
+                                <h4><Link to={`/react-api/`+r.category+`/`+r.id}>{r.title}</Link></h4>
                             </div>
                         );
                     }))
@@ -107,9 +107,9 @@ function Single() {
                     related.map((r=>{
                         return(
                             <div className="popularPostsWidgetItem">
-                                <Link to={`/`+r.category+`/`+r.id} className="popularPostsItemImg"><img src={`https://webeetec.com/itsharks24/blog/admin/`+r.image} alt="Francoise img" /></Link>
+                                <Link to={`/react-api/`+r.category+`/`+r.id} className="popularPostsItemImg"><img src={`https://webeetec.com/itsharks24/blog/admin/`+r.image} alt="Francoise img" /></Link>
                                 <time dateTime="2015-05-15">{r.date}</time>
-                                <h4><Link to={`/`+r.category+`/`+r.id}>{r.title}</Link></h4>
+                                <h4><Link to={`/react-api/`+r.category+`/`+r.id}>{r.title}</Link></h4>
                             </div>
                         );
                     }))

@@ -6,7 +6,7 @@ function Notfound() {
             <div className="page404Wrap">
                 <img src="images/404.png" alt="Francoise img" />
                 <p>The requested page has <br /> not been found</p>
-                <Link to={'/'} className="homePageLink">homepage</Link>
+                <Link to={'/react-api/'} className="homePageLink">homepage</Link>
             </div>
             <div className="clear" />
             <div className="ourInstagram">

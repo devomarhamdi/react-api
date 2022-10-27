@@ -32,12 +32,12 @@ function Home() {
                         return(
                         <div className="blogPostListWrap">
                             <div className="blogPostListItem clear">
-                            <Link to={`/`+post.category+`/`+post.id} className="blogPostListImg">
+                            <Link to={`/react-api/`+post.category+`/`+post.id} className="blogPostListImg">
                                 <img src={`https://webeetec.com/itsharks24/blog/admin/`+post.image} alt="Francoise img" />
                             </Link>
                             <div className="blogPostListText">
                                 <div className="blogPostListTime">{post.date}</div>
-                                <h3><Link to={`/`+post.category+`/`+post.id}>{post.title}</Link></h3>
+                                <h3><Link to={`/react-api/`+post.category+`/`+post.id}>{post.title}</Link></h3>
                                 <p>{post.description}</p>
                             </div>
                             </div>
@@ -84,9 +84,9 @@ function Home() {
                             <h3>Recent post</h3>
                             <div className="popularPostsWidget">    
                             <div className="popularPostsWidgetItem">
-                                <Link to={`/`+r.category+`/`+r.id} className="popularPostsItemImg"><img src={`https://webeetec.com/itsharks24/blog/admin/`+r.image} alt="Francoise img" /></Link>
+                                <Link to={`/react-api/`+r.category+`/`+r.id} className="popularPostsItemImg"><img src={`https://webeetec.com/itsharks24/blog/admin/`+r.image} alt="Francoise img" /></Link>
                                 <time dateTime="2015-05-15">{r.date}</time>
-                                <h4><Link to={`/`+r.category+`/`+r.id}>{r.title}</Link></h4>
+                                <h4><Link to={`/react-api/`+r.category+`/`+r.id}>{r.title}</Link></h4>
                             </div>
                             </div>
                         </div>

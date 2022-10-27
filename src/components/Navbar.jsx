@@ -19,7 +19,7 @@ function Navbar() {
                 </a>
                 <ul className="mainMenu clear">
                     <li>
-                    <Link to={'/'}>home</Link>
+                    <Link to={'/react-api/'}>home</Link>
                     </li>
                     <li>
                     <Link>Category</Link>
@@ -27,7 +27,7 @@ function Navbar() {
                         {
                             Categories.map((category)=>{
                                 return(
-                                    <li><Link to={'/'+category.name}>{category.name}</Link></li>
+                                    <li><Link to={'/react-api/'+category.name}>{category.name}</Link></li>
                                 );
                             })
                         }

@@ -37,8 +37,8 @@ function Category() {
                     <div className="archivePostItem">
                     <div className="archivePostTime">{p.date}</div>
                     <h3 className="archivePostTitle"><Link to={`/`+p.category+`/`+p.id}>{p.title}</Link></h3>
-                    <Link to={'/'+p.category} className="archivePostCategory">{p.category}</Link>
-                    <Link to={`/`+p.category+`/`+p.id} className="archivePostImg">
+                    <Link to={'/react-api/'+p.category} className="archivePostCategory">{p.category}</Link>
+                    <Link to={`/react-api/`+p.category+`/`+p.id} className="archivePostImg">
                         <img src={`https://webeetec.com/itsharks24/blog/admin/`+p.image} alt="Francoise img" />
                     </Link>
                     <p>{p.description}</p>
@@ -49,7 +49,7 @@ function Category() {
                         <a href="#"><i className="fa fa-twitter" /></a>
                         <a href="#"><i className="fa fa-pinterest" /></a>
                         </div>
-                        <Link to={`/`+p.category+`/`+p.id} className="archivePostReadMore">Read More</Link>
+                        <Link to={`/react-api/`+p.category+`/`+p.id} className="archivePostReadMore">Read More</Link>
                     </div>
                     </div>
                 </div>
@@ -94,9 +94,9 @@ function Category() {
                             <h3>Recent post</h3>
                             <div className="popularPostsWidget">    
                             <div className="popularPostsWidgetItem">
-                                <Link to={`/`+r.category+`/`+r.id} className="popularPostsItemImg"><img src={`https://webeetec.com/itsharks24/blog/admin/`+r.image} alt="Francoise img" /></Link>
+                                <Link to={`/react-api/`+r.category+`/`+r.id} className="popularPostsItemImg"><img src={`https://webeetec.com/itsharks24/blog/admin/`+r.image} alt="Francoise img" /></Link>
                                 <time dateTime="2015-05-15">{r.date}</time>
-                                <h4><Link to={`/`+r.category+`/`+r.id}>{r.title}</Link></h4>
+                                <h4><Link to={`/react-api/`+r.category+`/`+r.id}>{r.title}</Link></h4>
                             </div>
                             </div>
                         </div>

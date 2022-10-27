@@ -13,9 +13,9 @@ function App() {
       <BrowserRouter>
         <Navbar/>
           <Routes>
-            <Route path='/' element={<Home/>}/>
-            <Route path='/:category' element={<Category/>}/>
-            <Route path='/:category/:id' element={<Single/>}/>
+            <Route path='/react-api' element={<Home/>}/>
+            <Route path='/react-api/:category' element={<Category/>}/>
+            <Route path='/react-api/:category/:id' element={<Single/>}/>
             <Route path='*' element={<Notfound/>}/>
           </Routes>
         <Footer/>
